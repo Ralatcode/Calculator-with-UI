@@ -1,8 +1,13 @@
 const resultScreen = document.querySelector('#screen');
 const numKeys = document.querySelectorAll('#num-keys');
+const operators = document.querySelectorAll('#operations');
 
 numKeys.forEach(numKey => {
     numKey.addEventListener('click', clickNumber);
+});
+
+operators.forEach(operator => {
+    operator.addEventListener('click', operateValues);
 });
 
 function clickNumber() {
@@ -11,9 +16,10 @@ function clickNumber() {
     } else {
         resultScreen.textContent += this.textContent;
     } 
-    
-    const displayValue = resultScreen.textContent;
-    return displayValue;
+}
+
+function operateValues() {
+    console.log(this.textContent);
 }
 let num1;
 let num2;
