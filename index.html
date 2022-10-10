@@ -9,13 +9,13 @@
     <title>Js Calculator</title>
 </head>
 <body>
-    <div class="container bg-EerieBlack min-h-screen mx-auto" id="calc-container">
-        <h3 class="text-8xl text-center text-LightGrey pt-7">Calculator</h3>
-        <div>
+    <div class="container bg-EerieBlack min-h-screen mx-auto flex flex-col items-center justify-evenly rounded-xl" id="calc-container">
+        <h3 class="text-4xl text-center text-LightGrey pt-7">Calculator</h3>
+        <div class="w-[90%] mx-auto lg:max-w-[800px]">
             <div id="screen" class="text-right w-full text-6xl text-LightGrey px-4 py-6">
                 0
             </div>
-            <div id="calc-body">
+            <div id="calc-body" class="max-w-full gap-2">
                 <button class="buttons number" id="num-keys">9</button>
                 <button class="buttons number" id="num-keys">8</button>
                 <button class="buttons number" id="num-keys">7</button>
@@ -26,12 +26,12 @@
                 <button class="buttons number" id="num-keys">2</button>
                 <button class="buttons number" id="num-keys">1</button>
                 <button class="buttons number" id="num-keys">0</button>
-                <button class="buttons operator" id="operations">+</button>
-                <button class="buttons operator" id="operations">/</button>
-                <button class="buttons operator" id="operations">-</button>
-                <button class="buttons operator" id="operations">*</button>
+                <button class="buttons operator plus" id="operations">+</button>
+                <button class="buttons operator divide" id="operations">/</button>
+                <button class="buttons operator minus" id="operations">-</button>
+                <button class="buttons operator multiply" id="operations">*</button>
                 <button class="buttons operator" id="equal-btn">=</button>
-                <button class="buttons clear" id="clear">Clear</button>
+                <button class="buttons clear" id="clear">C</button>
             </div>
         </div>
     </div>

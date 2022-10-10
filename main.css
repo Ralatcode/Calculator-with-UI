@@ -557,9 +557,9 @@ video {
   width: 100%;
 }
 
-@media (min-width: 640px){
+@media (min-width: 480px){
   .container{
-    max-width: 640px;
+    max-width: 480px;
   }
 }
 
@@ -569,21 +569,15 @@ video {
   }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 976px){
   .container{
-    max-width: 1024px;
+    max-width: 976px;
   }
 }
 
-@media (min-width: 1280px){
+@media (min-width: 1440px){
   .container{
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px){
-  .container{
-    max-width: 1536px;
+    max-width: 1440px;
   }
 }
 
@@ -592,12 +586,56 @@ video {
   margin-right: auto;
 }
 
+.flex{
+  display: flex;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
 
+.w-4\/5{
+  width: 80%;
+}
+
 .w-full{
   width: 100%;
+}
+
+.w-\[90\%\]{
+  width: 90%;
+}
+
+.max-w-full{
+  max-width: 100%;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-evenly{
+  justify-content: space-evenly;
+}
+
+.gap-2{
+  gap: 0.5rem;
+}
+
+.gap-8{
+  gap: 2rem;
+}
+
+.rounded-xl{
+  border-radius: 0.75rem;
 }
 
 .bg-EerieBlack{
@@ -627,18 +665,17 @@ video {
   text-align: right;
 }
 
+.align-middle{
+  vertical-align: middle;
+}
+
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-6xl{
   font-size: 3.75rem;
-  line-height: 1;
-}
-
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-8xl{
-  font-size: 6rem;
   line-height: 1;
 }
 
@@ -647,18 +684,44 @@ video {
   color: rgb(212 212 210 / var(--tw-text-opacity));
 }
 
-.placeholder-sky-600::-moz-placeholder{
-  --tw-placeholder-opacity: 1;
-  color: rgb(2 132 199 / var(--tw-placeholder-opacity));
-}
-
-.placeholder-sky-600::placeholder{
-  --tw-placeholder-opacity: 1;
-  color: rgb(2 132 199 / var(--tw-placeholder-opacity));
-}
-
 html {
   font-family: 'Montserrat', sans-serif;
+}
+
+#calc-body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  grid-template-areas: 
+        "a1 b1 c1 d1"
+        "a2 b2 c2 d2"
+        "a3 b3 c3 d3"
+        "a4 b4 c4 d4";
+}
+
+.divide {
+  grid-area: d1;
+}
+
+.multiply {
+  grid-area: d2;
+}
+
+.minus {
+  grid-area: d3;
+}
+
+.plus {
+  grid-area: d4;
+}
+
+#equal-btn {
+  grid-area: c4;
+}
+
+#clear {
+  grid-area: a4;
 }
 
 .buttons{
@@ -668,6 +731,13 @@ html {
   line-height: 2.25rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.buttons:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 212 210 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(80 80 80 / var(--tw-text-opacity));
 }
 
 .number{
@@ -685,4 +755,20 @@ html {
   background-color: rgb(212 212 210 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(80 80 80 / var(--tw-text-opacity));
+}
+
+.clear:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 149 0 / var(--tw-text-opacity));
+}
+
+@media (min-width: 976px){
+  .lg\:mx-\[800px\]{
+    margin-left: 800px;
+    margin-right: 800px;
+  }
+
+  .lg\:max-w-\[800px\]{
+    max-width: 800px;
+  }
 }
