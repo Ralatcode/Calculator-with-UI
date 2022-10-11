@@ -44,16 +44,12 @@ function operateValues() {
 function calculate() {
     const result = operate(currentOperator, num1, num2);
     resultScreen.textContent = result;
-    console.log(currentOperator);
-    console.log(num1);
-    console.log(num2);
-    console.log(result);
 }
 
 
 function operate(operator, num1, num2) {
     if (operator === '+') {
-        return num1 + num2;
+        return parseInt(num1) + parseInt(num2);
     } else if (operator === '-') {
         return num1 - num2;
     } else if (operator === '*') {
