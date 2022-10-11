@@ -48,7 +48,7 @@ function operateValues() {
     counterArray[n - 1] = this.textContent; // keeps a record of the operator as an array
     currentOperator = this.textContent;
     resultScreen.textContent = '0';
-    // 
+    // using operator button to chain long calculation
     if (n >= 2 && num1 !== '' && num2 !== '') {
         result = operate(counterArray[n - 2], num1, num2);
         num1 = result;        
@@ -59,11 +59,16 @@ function operateValues() {
 }
 
 function calculate() {
-    result = operate(currentOperator, num1, num2);
-    resultScreen.textContent = Math.round(result * 10000000) / 10000000;
-    num1 = result;
-    num2 = '';
-    result = '';
+    if (currentOperator === '' || num1 === '' || num2 === '') {
+        alert('Incomplete Parameter(s)');
+    } else {
+        result = operate(currentOperator, num1, num2);
+        resultScreen.textContent = Math.round(result * 10000000) / 10000000;
+        num1 = result;
+        num2 = '';
+        result = '';
+    }
+    
 }
 
 
