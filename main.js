@@ -21,8 +21,11 @@ function clickNumber() {
     if (currentOperator === '') {
         if (resultScreen.textContent === '0') {
             resultScreen.textContent = this.textContent;
+            num1 = resultScreen.textContent;
         } else {
             resultScreen.textContent += this.textContent;
+            num1 = resultScreen.textContent;
+
         }
     } else {
         if (resultScreen.textContent === '0') {
@@ -36,12 +39,18 @@ function clickNumber() {
 }
 
 function operateValues() {
-    num1 = resultScreen.textContent;
     currentOperator = this.textContent;
     resultScreen.textContent = '0';
+    if (currentOperator !== '' && num1 !== '' && num2 !== '') {
+        calculate();
+        num1 = resultScreen.textContent;
+        currentOperator = '';
+        num2 = '';
+    }
 }
 
 function calculate() {
+    console.log(num1, currentOperator, num2);
     const result = operate(currentOperator, num1, num2);
     resultScreen.textContent = result;
 }
