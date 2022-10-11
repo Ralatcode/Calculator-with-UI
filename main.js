@@ -45,13 +45,14 @@ function clickNumber() {
 
 function operateValues() {
     n++;
-    counterArray[n - 1] = this.textContent;
+    counterArray[n - 1] = this.textContent; // keeps a record of the operator as an array
     currentOperator = this.textContent;
     resultScreen.textContent = '0';
+    // 
     if (n >= 2 && num1 !== '' && num2 !== '') {
         result = operate(counterArray[n - 2], num1, num2);
         num1 = result;        
-        resultScreen.textContent = num1;
+        resultScreen.textContent = Math.round(num1 * 10000000) / 10000000;
         num2 = '';
         result = '';
     }
@@ -59,7 +60,7 @@ function operateValues() {
 
 function calculate() {
     result = operate(currentOperator, num1, num2);
-    resultScreen.textContent = result;
+    resultScreen.textContent = Math.round(result * 10000000) / 10000000;
     num1 = result;
     num2 = '';
     result = '';
@@ -88,3 +89,4 @@ function clear() {
     n = 0;
     counterArray = [];
 }
+
