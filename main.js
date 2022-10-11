@@ -20,7 +20,7 @@ let num2 = '';
 let currentOperator = '';
 let n = 0; // operator counter
 let counterArray = [];
-let result = '';
+let result;
 
 function clickNumber() {
     if (currentOperator === '') {
@@ -50,7 +50,6 @@ function operateValues() {
     resultScreen.textContent = '0';
     if (n >= 2 && num1 !== '' && num2 !== '') {
         result = operate(counterArray[n - 2], num1, num2);
-        console.log(num1, counterArray[n - 2], num2);
         num1 = result;        
         resultScreen.textContent = num1;
         num2 = '';
@@ -59,11 +58,11 @@ function operateValues() {
 }
 
 function calculate() {
-    console.log(num1, currentOperator, num2);
     result = operate(currentOperator, num1, num2);
     resultScreen.textContent = result;
     num1 = result;
     num2 = '';
+    result = '';
 }
 
 
@@ -85,7 +84,7 @@ function clear() {
     num1 = '';
     num2 = '';
     currentOperator = '';
-    result = '';
+    result = undefined;
     n = 0;
     counterArray = [];
 }
