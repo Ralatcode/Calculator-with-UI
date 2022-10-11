@@ -2,6 +2,7 @@ const resultScreen = document.querySelector('#screen');
 const numKeys = document.querySelectorAll('#num-keys');
 const operators = document.querySelectorAll('#operations');
 const equalBtn = document.querySelector('#equal-btn');
+const clearBtn = document.querySelector('#clear');
 
 numKeys.forEach(numKey => {
     numKey.addEventListener('click', clickNumber);
@@ -12,6 +13,7 @@ operators.forEach(operator => {
 });
 
 equalBtn.addEventListener('click', calculate);
+clearBtn.addEventListener('click', clear);
 
 let num1 = '';
 let num2 = '';
@@ -66,4 +68,12 @@ function operate(operator, num1, num2) {
     } else if (operator === '/') {
         return num1 / num2;
     }
+}
+
+function clear() {
+    // resets values
+    resultScreen.textContent = '0';
+    num1 = '';
+    num2 = '';
+    currentOperator = '';
 }
