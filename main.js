@@ -50,11 +50,16 @@ function operateValues() {
     resultScreen.textContent = '0';
     // using operator button to chain long calculation
     if (n >= 2 && num1 !== '' && num2 !== '') {
-        result = operate(counterArray[n - 2], num1, num2);
-        num1 = result;        
-        resultScreen.textContent = Math.round(num1 * 10000000) / 10000000;
-        num2 = '';
-        result = '';
+        if (num1 == '0' || num2 == '0' && counterArray[n - 2] === '/') {
+            alert("Nothing is divisible by zero");
+        } else {
+            result = operate(counterArray[n - 2], num1, num2);
+            num1 = result;        
+            resultScreen.textContent = Math.round(num1 * 10000000) / 10000000;
+            num2 = '';
+            result = '';
+        }
+        
     }
 }
 
@@ -62,11 +67,15 @@ function calculate() {
     if (currentOperator === '' || num1 === '' || num2 === '') {
         alert('Incomplete Parameter(s)');
     } else {
-        result = operate(currentOperator, num1, num2);
-        resultScreen.textContent = Math.round(result * 10000000) / 10000000;
-        num1 = result;
-        num2 = '';
-        result = '';
+        if (num1 == '0' || num2 == '0' && currentOperator == '/') {
+            alert("Nothing is divisible by zero");
+        } else {
+            result = operate(currentOperator, num1, num2);
+            resultScreen.textContent = Math.round(result * 10000000) / 10000000;
+            num1 = result;
+            num2 = '';
+            result = '';        
+        }  
     }
     
 }
@@ -80,13 +89,8 @@ function operate(operator, num1, num2) {
     } else if (operator === '*') {
         return num1 * num2;
     } else if (operator === '/') {
-        if (num1 == '0' || num2 == '0') {
-            alert("Nothing is divisible by zero");
-            resultScreen.textContent = '0';
-        } else {
             return num1 / num2;
         }
-    }
 }
 
 function clear() {
