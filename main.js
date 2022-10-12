@@ -1,29 +1,34 @@
+// gets elements from the DOM
 const resultScreen = document.querySelector('#screen');
 const numKeys = document.querySelectorAll('#num-keys');
 const operators = document.querySelectorAll('#operations');
 const equalBtn = document.querySelector('#equal-btn');
 const clearBtn = document.querySelector('#clear');
 
+// adds click event listener to each num keys in the numkeys nodelist
 numKeys.forEach(numKey => {
     numKey.addEventListener('click', clickNumber);
 });
 
+// adds click event listener to each operator keys in the operators nodelist
 operators.forEach(operator => {
     operator.addEventListener('click', operateValues);
 });
 
-equalBtn.addEventListener('click', calculate);
-clearBtn.addEventListener('click', clear);
+equalBtn.addEventListener('click', calculate);  // runs function when equal btn is clicked
+clearBtn.addEventListener('click', clear); // runs function when clear btn is clickec
 
+// default values
 let num1 = '';
 let num2 = '';
-let currentOperator = '';
+let currentOperator = ''; //saves current operator pressed
 let n = 0; // operator counter
 let counterArray = [];
 let result;
 
+// registers click action and add value to the result screen text content
 function clickNumber() {
-    if (currentOperator === '') {
+    if (currentOperator === '') { // empty operator string means the operator has not being selected and means the value inputted is num1 
         if (resultScreen.textContent === '0' || result === '') {
             resultScreen.textContent = this.textContent;
             num1 = resultScreen.textContent;
