@@ -59,9 +59,9 @@ function operateValues() {
             alert("Nothing is divisible by zero");
         } else {
             result = operate(counterArray[n - 2], num1, num2);
-            num1 = result;        
+            num1 = result; //allocates the result to num1 so it can be used as another operand
             resultScreen.textContent = Math.round(num1 * 10000000) / 10000000;
-            num2 = '';
+            num2 = ''; // resets value after calculation
             result = '';
         }
         
@@ -77,15 +77,15 @@ function calculate() {
         } else {
             result = operate(currentOperator, num1, num2);
             resultScreen.textContent = Math.round(result * 10000000) / 10000000;
-            num1 = result;
-            num2 = '';
-            result = '';        
+            num1 = result; //allocates the result to num1 so it can be used as another operand
+            num2 = ''; // resets value after calculation
+            result = ''; // resets value after calculation
         }  
     }
     
 }
 
-
+// carrys out arithmetic operation and returns value
 function operate(operator, num1, num2) {
     if (operator === '+') {
         return parseInt(num1) + parseInt(num2);
