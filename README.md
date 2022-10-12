@@ -1,2 +1,2 @@
 # Calculator 
-Check live page [here](https://ralatcode.github.io/Calculator-with-UI/)
+Check out the live page [here](https://ralatcode.github.io/Calculator-with-UI/)
