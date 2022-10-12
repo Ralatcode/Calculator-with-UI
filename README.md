@@ -9,4 +9,5 @@ Check out the live page [here](https://ralatcode.github.io/Calculator-with-UI/)
 - Installed and configured tailwind with npm.
 - Created html and javascript files and configured accordingly.
 - made a layout of the page with html and proceeded to style using tailwind utility classes, and a bit of custom css in the input.css of tailwind.
- 
+- Proceeded to creating a function to carry out the arithmetic operation with javascript
+- 
