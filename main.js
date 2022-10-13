@@ -4,7 +4,7 @@ const numKeys = document.querySelectorAll('#num-keys');
 const operators = document.querySelectorAll('#operations');
 const equalBtn = document.querySelector('#equal-btn');
 const clearBtn = document.querySelector('#clear');
-
+const decimalBtn = document.getElementById('dot');
 // adds click event listener to each num keys in the numkeys nodelist
 numKeys.forEach(numKey => {
     numKey.addEventListener('click', clickNumber);
@@ -14,6 +14,8 @@ numKeys.forEach(numKey => {
 operators.forEach(operator => {
     operator.addEventListener('click', operateValues);
 });
+
+decimalBtn.addEventListener('click', addDecimal);
 
 equalBtn.addEventListener('click', calculate);  // runs function when equal btn is clicked
 clearBtn.addEventListener('click', clear); // runs function when clear btn is clickec
@@ -35,7 +37,6 @@ function clickNumber() {
         } else {
             resultScreen.textContent += this.textContent;
             num1 = resultScreen.textContent;
-
         }
     } else {
         if (resultScreen.textContent === '0' || result === '') {
@@ -65,6 +66,12 @@ function operateValues() {
             result = '';
         }
         
+    }
+}
+
+function addDecimal() {
+    if(!(resultScreen.textContent.includes('.'))) {
+        resultScreen.textContent += '.';
     }
 }
 
