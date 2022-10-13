@@ -5,6 +5,7 @@ const operators = document.querySelectorAll('#operations');
 const equalBtn = document.querySelector('#equal-btn');
 const clearBtn = document.querySelector('#clear');
 const decimalBtn = document.getElementById('dot');
+const backspaceBtn = document.getElementById('delete');
 // adds click event listener to each num keys in the numkeys nodelist
 numKeys.forEach(numKey => {
     numKey.addEventListener('click', clickNumber);
@@ -16,6 +17,8 @@ operators.forEach(operator => {
 });
 
 decimalBtn.addEventListener('click', addDecimal);
+
+backspaceBtn.addEventListener('click', deleteChar);
 
 equalBtn.addEventListener('click', calculate);  // runs function when equal btn is clicked
 clearBtn.addEventListener('click', clear); // runs function when clear btn is clickec
@@ -68,10 +71,18 @@ function operateValues() {
         
     }
 }
-
+// adds decimal point if it does not exist in the current string
 function addDecimal() {
     if(!(resultScreen.textContent.includes('.'))) {
         resultScreen.textContent += '.';
+    }
+}
+
+function deleteChar() {
+    if (resultScreen.textContent == '0') {
+        alert('Input a value.');
+    } else {
+        resultScreen.textContent = resultScreen.textContent.slice(0, -1);
     }
 }
 
