@@ -586,6 +586,10 @@ video {
   margin-right: auto;
 }
 
+.mt-6{
+  margin-top: 1.5rem;
+}
+
 .flex{
   display: flex;
 }
@@ -774,6 +778,10 @@ html {
 @media (min-width: 768px){
   .md\:max-w-\[400px\]{
     max-width: 400px;
+  }
+
+  .md\:max-w-\[450px\]{
+    max-width: 450px;
   }
 
   .md\:justify-center{
