@@ -626,14 +626,19 @@ video {
   border-radius: 0.75rem;
 }
 
+.bg-LightGrey{
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 212 210 / var(--tw-bg-opacity));
+}
+
 .bg-EerieBlack{
   --tw-bg-opacity: 1;
   background-color: rgb(28 28 28 / var(--tw-bg-opacity));
 }
 
-.bg-LightGrey{
-  --tw-bg-opacity: 1;
-  background-color: rgb(212 212 210 / var(--tw-bg-opacity));
+.py-12{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .px-4{
@@ -644,25 +649,6 @@ video {
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-8{
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.py-10{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-.py-12{
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.pt-7{
-  padding-top: 1.75rem;
 }
 
 .pt-4{
@@ -707,35 +693,44 @@ html {
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
-  grid-template-areas: 
+  grid-template-areas:
+        "a0 b0 b0 d0" 
         "a1 b1 c1 d1"
         "a2 b2 c2 d2"
         "a3 b3 c3 d3"
-        "a4 b4 c4 d4";
+        "a4 a4 c4 d4";
 }
 
 .divide {
-  grid-area: d1;
+  grid-area: d0;
 }
 
 .multiply {
-  grid-area: d2;
+  grid-area: d1;
 }
 
 .minus {
-  grid-area: d3;
+  grid-area: d2;
 }
 
 .plus {
-  grid-area: d4;
+  grid-area: d3;
+}
+
+.zero {
+  grid-area: a4;
 }
 
 #equal-btn {
-  grid-area: c4;
+  grid-area: d4;
 }
 
 #clear {
-  grid-area: a4;
+  grid-area: a0;
+}
+
+#delete {
+  grid-area: b0;
 }
 
 .buttons{
@@ -783,15 +778,5 @@ html {
 
   .md\:justify-center{
     justify-content: center;
-  }
-
-  .md\:rounded-3xl{
-    border-radius: 1.5rem;
-  }
-}
-
-@media (min-width: 976px){
-  .lg\:max-w-\[400px\]{
-    max-width: 400px;
   }
 }
